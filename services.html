@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Gaddi Buddy</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+   
+    body {
+      background-color: #3e4654; 
+      color: #fff; 
+      font-family: Arial, sans-serif;
+      margin: 0; 
+    }
+    h5{
+      color:#007bff;
+      
+    }
+    #services-container .card-text {
+  color: black;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      padding: 10px;
+      background-color: #3e4654; 
+     
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #007bff; 
+    }
+    .welcome-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: #007bff; 
+      text-align: center;
+      margin-top: 50px;
+    }
+    .book-appointment button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #007bff; 
+      border: none;
+      color: #fff; 
+  
+    }
+    .book-appointment button:hover {
+      background-color: orange; 
+    }
+    .navbar {
+      background-color: #007bff; 
+      margin-bottom: 20px; 
+      transition: all 0.3s ease;
+      font-size: large;
+      margin: auto;
+      border-radius: 100px;
+      width:900px;
+    }
+    .navbar .nav-link {
+      color: #fff; 
+     
+    }
+    .navbar .nav-link:hover {
+      color: #f0ad4e; 
+      border-bottom: 3px solid red;
+    }
+    
+    .services-section {
+      padding: 20px;
+    }
+    .service-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border: orange 20px;
+    }
+    .service-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .other-issues {
+      margin-top: 30px;
+    }
+    .rate-section {
+      margin-top: 30px;
+    }
+    .find-mechanic-btn {
+      margin-top: 30px;
+    }
+    .contact-info {
+  background-color: #007bff;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-details,
+.services,
+.service-hours {
+  flex: 1 1 30%;
+  padding: 10px;
+}
+
+.contact-details h2,
+.services h2,
+.service-hours h2 {
+  margin-bottom: 10px;
+}
+
+.contact-details p.hours,
+.service-hours p.hours {
+  font-weight: bold;
+}
+
+.services .service-list,
+.services .quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services .service-list li,
+.services .quick-links li {
+  margin-bottom: 5px;
+}
+
+.services .quick-links a {
+  color: #000;
+}
+
+.contact-details .email {
+  display: block;
+  margin-top: 5px;
+}
+
+.contact-details a {
+  color: #000;
+  font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+  
+  <header class="header">
+    <div class="logo">Gaddi Buddy</div>
+    <div class="welcome-text">Welcome to Gaddi Buddy - Your Trusted Mechanic Partner</div>
+    <div class="book-appointment">
+      <button class="btn btn-primary">Book Appointment</button>
+    </div>
+  </header>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home" style ="font-size: 24px"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html"><i class="fa fa-wrench" style ="font-size: 24px"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html"><i class="fa fa-phone" style ="font-size: 24px"></i>Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html"><i class="fa fa-registered" style ="font-size: 24px"></i>Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="Aboutus.html"><i class="fa fa-info" style ="font-size: 24px"></i>About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ 
+ 
+    <div id="services-container" class="container my-5">
+      <h2 class="text-center mb-4">Our Services</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Oil Change</h5>
+              <p class="card-text">Keep your engine running smoothly with our professional oil change service.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Car Polishing</h5>
+              <p class="card-text">Restore your car's shine and protect its paint with our car polishing service.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Engine Tuning</h5>
+              <p class="card-text">Optimize your car's performance with our expert engine tuning services.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Detailing</h5>
+              <p class="card-text">Get your car looking like new with our comprehensive detailing service.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Car Wash</h5>
+              <p class="card-text">Keep your car clean and spotless with our thorough car wash service.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Alignment</h5>
+              <p class="card-text">Ensure your car drives straight and handles correctly with our alignment service.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Brake Services</h5>
+              <p class="card-text">Maintain your safety with our comprehensive brake inspection and repair services.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Error Diagnosis</h5>
+              <p class="card-text">Diagnose and fix any issues with our advanced error diagnostic services.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  <section class="contact-info">
+    <div class="contact-details">
+      <h2>Working Hours</h2>
+      <p><span class="phone">+92 306 575987_</span> <span class="email">info@guddybuddy.pk</span></p>
+      <p class="hours">Mon-Sun 9:00am-7:00pm (Friday Closed)</p>
+      <p><a href="#">Give us a call</a> 10am-11pm Online Support</p>
+    </div>
+    <div class="services">
+      <h2>Our Services</h2>
+      <ol class="service-list">
+        <li>Catalytic Converter Cleaning</li>
+        <li>Tuning</li>
+        <li>Oil Lube, Filters</li>
+        <li>Batteries</li>
+        <li>Transmission Oil Change</li>
+        <li>Computer Diagnostics</li>
+      </ol>
+      <ul class="quick-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="service-hours">
+      <h2>Service Hours</h2>
+      <p class="hours">Mon    9:00am-7:00pm</p>
+      <p class="hours">Thu    9:00am-7:00pm</p>
+      <p class="hours">Wed    9:00am-7:00pm</p>
+      <p class="hours">Thur    9:00am-7:00pm</p>
+      <p class="hours">Fri        OFF</p>
+      <p class="hours">Sat         9:00am-7:00pm</p>
+    </div>
+  </section>
+  
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - Gaddi Buddy</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      background-color: #3e4654;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      padding: 10px;
+      background-color: #3e4654;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #007bff;
+    }
+    .welcome-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: #007bff;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .book-appointment button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+    }
+    .book-appointment button:hover {
+      background-color: orange;
+    }
+    .navbar {
+      background-color: #007bff;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      font-size: large;
+      margin: auto;
+      border-radius: 100px;
+      width: 900px;
+    }
+    .navbar .nav-link {
+      color: #fff;
+    }
+    .navbar .nav-link:hover {
+      color: #f0ad4e;
+      border-bottom: 3px solid red;
+    }
+
+    .container1 {
+      position: absolute;
+      top: 70%; /* Adjust according to the height of your navbar */
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .container2 {
+      position: absolute;
+      top: 120%; /* Adjust according to the height of your navbar and first picture box */
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    h3 {
+      text-align: center;
+      background-color: blue;
+    }
+
+    .picture-box {
+      width: 800px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: flex-start;
+      font-size: 18px;
+    }
+
+    .picture-box img {
+      width: 250px;
+      height: 300px;
+      margin-right: 30px;
+    }
+
+    .description {
+      flex-grow: 1;
+      position: relative;
+      margin-bottom: 50px;
+       /* Adjust the value to match your navbar height */
+    }
+
+    .description h2 {
+      font-size: 24px;
+      margin-top: 0;
+      background-color: blue;
+    }
+
+    .description p {
+      font-size: 20px;
+      color: white;
+    }
+
+    .contact-info {
+      margin-top: 55%;
+      background-color: #007bff;
+      padding: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .contact-details,
+    .services,
+    .service-hours {
+      flex: 1 1 30%;
+      padding: 10px;
+    }
+
+    .contact-details h2,
+    .services h2,
+    .service-hours h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-details p.hours,
+    .service-hours p.hours {
+      font-weight: bold;
+    }
+
+    .services .service-list,
+    .services .quick-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .services .service-list li,
+    .services .quick-links li {
+      margin-bottom: 5px;
+    }
+
+    .services .quick-links a {
+      color: #000;
+    }
+
+    .contact-details .email {
+      display: block;
+      margin-top: 5px;
+    }
+
+    .contact-details a {
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+<header class="header">
+  <div class="logo">Gaddi Buddy</div>
+  <div class="welcome-text">Welcome to Gaddi Buddy - Your Trusted Mechanic Partner</div>
+  <div class="book-appointment">
+    <button class="btn btn-primary">Book Appointment</button>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home" style ="font-size: 24px"></i> Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html"><i class="fa fa-wrench" style ="font-size: 24px"></i>Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="Contact.html"><i class="fa fa-phone" style ="font-size: 24px"></i>Contact</a></li>
+      <li class="nav-item"><a class="nav-link" href="register.html"><i class="fa fa-registered" style ="font-size: 24px"></i>Register</a></li>
+      <li class="nav-item"><a class="nav-link" href="Aboutus.html"><i class="fa fa-info" style ="font-size: 24px"></i>About Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<br><br>
+<div class="container1">
+  <div class="picture-box">
+    <img src="webpicture2.jpg" alt="Picture">
+    <div class="description">
+      <h2>10 Years Experience</h2>
+      <p>Guddi Buddy is a full-service preventive maintenance and automotive repair center. We perform high quality, guaranteed service you can trust at a fair price. 
+        We repair domestic and foreign vehicles and are your best choice for scheduled maintenance of your car, SUV, truck and fleet vehicles..</p>
+    </div>
+  </div>
+</div>
+<div><h3>About-Us</h3></div>
+<br><br>
+<div class="container2">
+  <div class="picture-box">
+    <img src="web3.jpg" alt="Picture">
+    <div class="description">
+      <h2>Welcome to Mechanic On Wheels</h2>
+      <p>We are advanced one stop shop which provides wide range of Car Maintenance & Repair services with availability of Parts needed.
+         Our goal is to save our customers time and to gather everything needed in just one service which is just a phone call away!
+   
+        Our team of experts work with  extended working time in order to provide you 100% satisfaction and convenience.
+         
+        We provide Doorstep service and customers satisfaction is our top priority.
+         Our Team consists of engineers & DAE Automotive holders with more than 10 year experience </p>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<section class="contact-info">
+  <div class="contact-details">
+    <h2>Working Hours</h2>
+    <p><span class="phone">+92 311 575987_</span> <span class="email">info@guddybuddy.pk</span></p>
+    <p class="hours">Mon-Sun 9:00am-7:00pm (Friday Closed)</p>
+    <p><a href="#">Give us a call</a> 10am-11pm Online Support</p>
+  </div>
+  <div class="services">
+    <h2>Our Services</h2>
+    <ul class="service-list">
+      <li>Catalytic Converter Cleaning</li>
+      <li>Tuning</li>
+      <li>Oil Lube, Filters</li>
+      <li>Batteries</li>
+      <li>Transmission Oil Change</li>
+      <li>Computer Diagnostics</li>
+    </ul>
+    <ul class="quick-links">
+      <li><a href="Aboutus.html">About Us</a></li>
+      <li><a href="Contact.html">Contact Us</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+  </div>
+  <div class="service-hours">
+    <h2>Service Hours</h2>
+    <p class="hours">Mon-Thu 9:00am-7:00pm</p>
+    <p class="hours">Fri OFF</p>
+    <p class="hours">Sat 9:00am-7:00pm</p>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

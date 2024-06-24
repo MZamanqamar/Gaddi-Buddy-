@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mechanic Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #3e4654;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      text-align: left;
+      background-color: #f2f2f2;
+      color: blue;
+    }
+
+    .new-appointments {
+      background-color: #f5f5f5;
+    }
+
+    button {
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45A049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mechanic Dashboard</h1>
+  <h2>New Appointments</h2>
+  <table id="new-appointments">
+    <tr>
+      <th>User ID</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>phone</th>
+      <th>city</th>
+      <th>email</th>
+      <th>date</th>
+      <th>time</th>
+      <th>brand</th>
+      <th>year</th>
+      <th>package</th>
+      <th>service_required</th>
+      <th>Action</th>
+    </tr>
+  </table>
+  <h2>Previous Appointments</h2>
+  <table id="previous-appointments">
+    <tr>
+      <th>User ID</th>
+      <th>first_name</th>
+      <th>last_name</th>
+      <th>phone</th>
+      <th>city</th>
+      <th>email</th>
+      <th>date</th>
+      <th>time</th>
+      <th>brand</th>
+      <th>year</th>
+      <th>package</th>
+      <th>service_required</th>
+      <th>Status</th>
+    </tr>
+  </table>
+  <script>
+    const newAppointmentsTable = document.getElementById('new-appointments');
+    const previousAppointmentsTable = document.getElementById('previous-appointments');
+
+    fetch('mechanic_data.php')
+      .then(response => response.json())
+      .then(data => {
+        const allAppointments = data.appointments;
+
+        const newAppointments = allAppointments.filter(appointment => appointment.status === '0');
+        const previousAppointments = allAppointments.filter(appointment => appointment.status !== '0');
+
+        newAppointments.forEach(appointment => {
+          const row = createAppointmentRow(appointment, true);
+          newAppointmentsTable.appendChild(row);
+        });
+
+        previousAppointments.forEach(appointment => {
+          const row = createAppointmentRow(appointment, false);
+          previousAppointmentsTable.appendChild(row);
+        });
+      });
+
+    function createAppointmentRow(appointment, isNew) {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${appointment.id}</td>
+        <td>${appointment.first_name}</td>
+        <td>${appointment.last_name}</td>
+        <td>${appointment.phone}</td>
+        <td>${appointment.city}</td>
+        <td>${appointment.email}</td>
+        <td>${appointment.date}</td>
+        <td>${appointment.time}</td>
+        <td>${appointment.brand}</td>
+        <td>${appointment.year}</td>
+        <td>${appointment.package}</td>
+        <td>${appointment.service_required}</td>
+        ${isNew ? '<td><button onclick="handleAcceptAppointment(' + appointment.id + ')">Accept</button></td>' : '<td>Accepted</td>'}
+      `;
+      return row;
+    }
+
+    function handleAcceptAppointment(appointmentId) {
+      fetch('accept_appointments.php', {
+        method: 'POST',
+        body: JSON.stringify({ appointmentId }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          const row = document.querySelector(`#new-appointments tr td:first-child[text="${appointmentId}"]`).parentNode;
+          row.parentNode.removeChild(row);
+
+          // Assuming the server returns the updated appointment details
+          const updatedAppointment = data.appointment;
+          const newRow = createAppointmentRow(updatedAppointment, false);
+          previousAppointmentsTable.appendChild(newRow);
+        } else {
+          alert('Error accepting appointment!');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

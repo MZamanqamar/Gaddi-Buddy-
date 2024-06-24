@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaddi Buddy - Your Trusted Mechanic Partner</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+
+    body {
+      background-color: #3e4654; 
+      color: #fff; 
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      padding: 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #007bff; 
+    }
+    .welcome-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: #007bff; 
+      text-align: center;
+      margin-top: 50px;
+    }
+    .book-appointment button {
+      padding: 10px 20px;
+      border-radius: 20px; 
+      background-color: #007bff; 
+      border: none;
+    }
+    .book-appointment button:hover {
+      background-color: orange; 
+      
+    }
+    .navbar {
+      background-color: #007bff; 
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      font-size: large;
+      border-radius: 100px;
+      margin: auto;
+      width:900px;
+     
+    }
+
+    .navbar .nav-link {
+      color: #fff; 
+      display: flex;
+      justify-content: space-around;
+    }
+    .navbar .nav-link:hover {
+      color: #f0ad4e;
+      border-bottom: 3px solid red;
+
+    }
+    h3 {
+        margin-top: 20px;
+      text-align: center;
+      background-color: blue;
+    }
+    .contact-info {
+        margin-top: 10px;
+  background-color: #007bff;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-details,
+.services,
+.service-hours {
+  flex: 1 1 30%;
+  padding: 10px;
+}
+
+.contact-details h2,
+.services h2,
+.service-hours h2 {
+  margin-bottom: 10px;
+}
+
+.contact-details p.hours,
+.service-hours p.hours {
+  font-weight: bold;
+}
+
+.services .service-list,
+.services .quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services .service-list li,
+.services .quick-links li {
+  margin-bottom: 5px;
+}
+
+.services .quick-links a {
+  color: #000;
+}
+
+.contact-details .email {
+  display: block;
+  margin-top: 5px;
+}
+
+.contact-details a {
+  color: #000;
+  font-weight: bold;
+}
+.btn btn-primary{
+  margin-left: 10px;
+  color: #007bff;
+  text-decoration:solid;
+  color: #000;
+  
+}
+
+.btn btn-primary:hover {
+  text-decoration:solid;
+  color:orange;
+}
+
+    </style>
+    </head>
+    <body>
+    
+      
+      <header class="header">
+        <div class="logo">Gaddi Buddy</div>
+        <div class="welcome-text">Welcome to Gaddi Buddy - Your Trusted Mechanic Partner</div>
+        <div class="book-appointment">
+          <button class="btn btn-primary">Book Appointment</button>
+        </div>
+      </header>
+    
+    
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home" style ="font-size: 24px"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html"><i class="fa fa-wrench" style ="font-size: 24px"></i>Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="Contact.html"><i class="fa fa-phone" style ="font-size: 24px"></i>Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html"><i class="fa fa-registered" style ="font-size: 24px"></i>Register</a></li>
+            <li class="nav-item"><a class="nav-link" href="Aboutus.html"><i class="fa fa-info" style ="font-size: 24px"></i>About Us</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div><h3>Registration for Mechanic</h3></div>
+      
+      <form id="registerForm" class="container mt-5">
+        <h2 class="mb-4">Register as a Mechanic</h2>
+        
+        <div class="form-group">
+            <label for="full-name">Full Name (نام)</label>
+            <input type="text" class="form-control" id="full-name" name="full_name" required>
+        </div>
+        <div class="form-group">
+            <label for="cnic">CNIC (شناختی کارڈ نمبر)</label>
+            <input type="text" class="form-control" id="cnic" name="CNIC" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="dob">Date of Birth (تاریخ پیدائش)</label>
+            <input type="date" class="form-control" id="dob" name="dob" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Email Address (ای میل)</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="phone">Phone Number (فون نمبر)</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="certification">Certification/License Number (سرٹیفیکیشن/لائسنس نمبر)</label>
+            <input type="text" class="form-control" id="certification" name="certification" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="experience">Years of Experience (تجربے کے سال)</label>
+            <input type="number" class="form-control" id="experience" name="experience" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="username">Username (صارف نام)</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="password">Password (پاس ورڈ)</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="bio">Biography/About Me (میرے بارے میں)</label>
+            <textarea class="form-control" id="bio" name="bio"></textarea>
+        </div>
+    
+        <div class="form-group">
+            <label for="service-area">Service Area (سروس کا علاقہ)</label>
+            <input type="text" class="form-control" id="service-area" name="service_area">
+        </div>
+    
+        <div class="form-group">
+            <label for="availability">Availability (دستیابی)</label>
+            <input type="text" class="form-control" id="availability" name="availability">
+        </div>
+    
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
+            <label class="form-check-label" for="terms">I agree to the <a href="/terms">Terms and Conditions</a> (شرائط و ضوابط)</label>
+        </div>
+    
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required>
+            <label class="form-check-label" for="privacy">I agree to the <a href="/privacy">Privacy Policy</a> (رازداری کی پالیسی)</label>
+        </div>
+    
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="marketing" name="marketing">
+            <label class="form-check-label" for="marketing">I would like to receive marketing communications (میں مارکیٹنگ مواصلات وصول کرنا چاہتا ہوں)</label>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Register (رجسٹر کریں)</button>
+    </form>
+       
+  <section class="contact-info">
+    <div class="contact-details">
+      <h2>Working Hours</h2>
+      <p><span class="phone">+92 306 575987_</span> <span class="email">info@guddybuddy.pk</span></p>
+      <p class="hours">Mon-Sun 9:00am-7:00pm (Friday Closed)</p>
+      <p><a href="#">Give us a call</a> 10am-11pm Online Support</p>
+    </div>
+    <div class="services">
+      <h2>Our Services</h2>
+      <ol class="service-list">
+        <li>Catalytic Converter Cleaning</li>
+        <li>Tuning</li>
+        <li>Oil Lube, Filters</li>
+        <li>Batteries</li>
+        <li>Transmission Oil Change</li>
+        <li>Computer Diagnostics</li>
+      </ol>
+      <ul class="quick-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="service-hours">
+      <h2>Service Hours</h2>
+      <p class="hours">Mon    9:00am-7:00pm</p>
+      <p class="hours">Thu    9:00am-7:00pm</p>
+      <p class="hours">Wed    9:00am-7:00pm</p>
+      <p class="hours">Thur    9:00am-7:00pm</p>
+      <p class="hours">Fri        OFF</p>
+      <p class="hours">Sat         9:00am-7:00pm</p>
+    </div>
+  </section>
+  <script>
+    // Single Responsibility Principle (SRP): Each function has a single responsibility.
+
+    // Function to handle form submission
+    function handleFormSubmission(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        submitFormData(formData)
+            .then(data => {
+                alert(data);
+                if (data.includes('successfully')) {
+                    event.target.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+    }
+
+    // Function to submit form data
+    async function submitFormData(formData) {
+        try {
+            const response = await fetch('register_mechanic.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            return await response.text();
+        } catch (error) {
+            console.error('Fetch error:', error);
+            throw error;
+        }
+    }
+
+    // Attaching event listener to the form
+    document.getElementById('registerForm').addEventListener('submit', handleFormSubmission);
+</script>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule An Appointment</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.col {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="cnic"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e68a00;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="appointmentForm" method="POST" action="submit_appointment.php">
+            <h1>Schedule An Appointment</h1>
+           
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="row">
+                    <div class="col">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" required>
+                    </div>
+                    <div class="col">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="col">
+                        <label for="city">City</label>
+                        <select id="city" name="city" required>
+                            <option value="karachi">Karachi</option>
+                            <option value="lahore">Lahore</option>
+                            <option value="islamabad">Islamabad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="cnic">CNIC</label>
+                        <input type="cnic" id="cnic" name="cnic" required>
+                    </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+            </div>
+            <div class="appointment-details">
+                <h2>Appointment Details</h2>
+                <div class="row">
+                    <div class="col">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="col">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="brand">Select Brand</label>
+                        <select id="brand" name="brand" required>
+                            <option value="toyota">Toyota</option>
+                            <option value="honda">Honda</option>
+                            <option value="ford">Ford</option>
+                            <option value="bmw">BMW</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="year">Select Year</label>
+                        <select id="year" name="year" required>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="package">Select Services</label>
+                        <select id="package" name="package" required>
+                            <option value="service1">Service 1</option>
+                            <option value="service2">Service 2</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="service-required">Service Required</label>
+                        <input type="text" id="service-required" name="service_required" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Get An Appointment</button>
+            <a href ="userlogin.html" ><h3>  Login For Monitoring Your Appointment</h3></a>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', handleFormSubmit);
+    
+        function handleFormSubmit(event) {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+    
+          submitFormData(formData)
+            .then(responseText => {
+              alert(responseText);
+              if (responseText.includes('successfully')) {
+                event.target.reset();
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('An error occurred. Please try again.');
+            });
+        }
+    
+        async function submitFormData(formData) {
+          try {
+            const response = await fetch('submit_appointment.php', {
+              method: 'POST',
+              body: formData
+            });
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.text();
+          } catch (error) {
+            console.error('Fetch error:', error);
+            throw error;
+          }
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaddi Buddy - Your Trusted Mechanic Partner</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+
+    body {
+      background-color: #3e4654; 
+      color: #fff; 
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      align-items: center;
+      padding: 20px;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #007bff; 
+    }
+    .welcome-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: #007bff; 
+      text-align: center;
+      margin-top: 50px;
+    }
+    .book-appointment button {
+      padding: 10px 20px;
+      border-radius: 20px; 
+      background-color: #007bff; 
+      border: none;
+    }
+    .book-appointment button:hover {
+      background-color: orange; 
+      
+    }
+    .navbar {
+      background-color: #007bff; 
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      font-size: large;
+      border-radius: 100px;
+      margin: auto;
+      width:900px;
+     
+    }
+
+    .navbar .nav-link {
+      color: #fff; 
+      display: flex;
+      justify-content: space-around;
+    }
+    .navbar .nav-link:hover {
+      color: #f0ad4e;
+      border-bottom: 3px solid red;
+
+    }
+   
+.ask-question {
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+
+}
+
+.ask-question h2 {
+  margin-bottom: 15px;
+
+}
+/* Continued from previous CSS */
+
+.ask-question textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  margin-top: 10px;
+ 
+}
+
+.select-service {
+  margin-top: 15px;
+}
+
+.select-service label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.select-service select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.buttons button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: orange;
+}
+
+.buttons a {
+  margin-left: 10px;
+  color: #007bff;
+  text-decoration:solid;
+  color: #000;
+  
+}
+
+.buttons a:hover {
+  text-decoration:solid;
+  color:orange;
+}
+
+/* Working hours styles */
+.working-hours {
+ margin-top: 30px;
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  color: #000;
+  
+}
+
+.working-hours p.hours {
+  font-weight: bold;
+  
+}
+  .contact-info {
+  margin-top:auto;
+  background-color: #007bff;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-details,
+.services,
+.service-hours {
+  flex: 1 1 30%;
+  padding: 10px;
+}
+
+.contact-details h2,
+.services h2,
+.service-hours h2 {
+  margin-bottom: 10px;
+}
+
+.contact-details p.hours,
+.service-hours p.hours {
+  font-weight: bold;
+}
+
+.services .service-list,
+.services .quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.services .service-list li,
+.services .quick-links li {
+  margin-bottom: 5px;
+}
+
+.services .quick-links a {
+  color: #000;
+}
+
+.contact-details .email {
+  display: block;
+  margin-top: 5px;
+}
+
+.contact-details a {
+  color: #000;
+  font-weight: bold;
+}
+input {
+ box-sizing: border-box;
+ border-bottom: #0069d9;
+ margin-left: 80px;
+}
+
+  </style>
+</head>
+<body>
+
+  
+  <header class="header">
+    <div class="logo">Gaddi Buddy</div>
+    <div class="welcome-text">Welcome to Gaddi Buddy - Your Trusted Mechanic Partner</div>
+    <div class="book-appointment">
+      <button class="btn btn-primary">Book Appointment</button>
+    </div>
+  </header>
+
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home" style ="font-size: 24px"></i> Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html"><i class="fa fa-wrench" style ="font-size: 24px"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html"><i class="fa fa-phone" style ="font-size: 24px"></i>Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="register.html"><i class="fa fa-registered" style ="font-size: 24px"></i>Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="Aboutus.html"><i class="fa fa-info" style ="font-size: 24px"></i>About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  
+    <div class="container">
+      <div class="ask-question">
+        <h2>Ask a Question</h2>
+
+        <div>
+         <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="a508c1e7-81a8-4297-acf0-ee4d983615c2">
+          <input type="text"  name="Name" placeholder=" Enter name">
+          <input type="text" name="phone Number"  placeholder=" Enter phone number">
+          <input type="text"  name="Email" placeholder=" Enter Email">
+       
+          <textarea name="message" id="message" placeholder="Type your question here..."></textarea>
+          <div class="select-service">
+            <label for="service">Select Service</label>
+            <select name="service" id="service">
+              <option value="">Select...</option>
+              <option value="oil-change">Oil Change</option>
+              <option value="tune-up">Tune Up</option>
+              <option value="brakes">Brakes</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="buttons">
+            <button type="submit">Send Message</button>
+           
+          </div>
+        </div>
+        </form>
+      </div>
+
+      <div class="working-hours">
+        <h2>Working Hours</h2>
+        <p><span class="phone">+92 311 3300665</span> <span class="email">info@mechaniconwheels.pk</span></p>
+        <p class="hours">Mon-Sun 9:00am-7:00pm (Friday Closed)</p>
+        <p><a href="#">Give us a call</a> 10am-11pm Online Support</p>
+      </div>
+    </div>
+
+<br><br>
+
+  <section class="contact-info">
+    <div class="contact-details">
+      <h2>Working Hours</h2>
+      <p><span class="phone">+92 306 575987_</span> <span class="email">info@guddybuddy.pk</span></p>
+      <p class="hours">Mon-Sun 9:00am-7:00pm (Friday Closed)</p>
+      <p><a href="#">Give us a call</a> 10am-11pm Online Support</p>
+    </div>
+    <div class="services">
+      <h2>Our Services</h2>
+      <ul class="service-list">
+        <li>Catalytic Converter Cleaning</li>
+        <li>Tuning</li>
+        <li>Oil Lube, Filters</li>
+        <li>Batteries</li>
+        <li>Transmission Oil Change</li>
+        <li>Computer Diagnostics</li>
+      </ul>
+      <ul class="quick-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="service-hours">
+      <h2>Service Hours</h2>
+      <p class="hours">Mon    9:00am-7:00pm</p>
+      <p class="hours">Thu    9:00am-7:00pm</p>
+      <p class="hours">Wed    9:00am-7:00pm</p>
+      <p class="hours">Thur    9:00am-7:00pm</p>
+      <p class="hours">Fri        OFF</p>
+      <p class="hours">Sat         9:00am-7:00pm</p>
+    </div>
+  </section>
+  
+
+ 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

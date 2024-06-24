@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #3e4654;
+      color: white;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    th {
+      text-align: left;
+      background-color: #f2f2f2;
+      color: blue;
+    }
+    button {
+      padding: 5px 10px;
+      background-color: #4CAF50; /* Green color for buttons */
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45A049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+
+  <h2>Mechanics</h2>
+  <table id="mechanics">
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>CNIC</th>
+      <th>DOB</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Certification</th>
+      <th>Experience</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Bio</th>
+      <th>Service Area</th>
+      <th>Availability</th>
+    </tr>
+  </table>
+
+  <h2>Owners</h2>
+  <table id="owners">
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>CNIC</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Username</th>
+      <th>Password</th>
+    </tr>
+  </table>
+
+  <h2>Appointments</h2>
+  <table id="appointments">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone</th>
+      <th>City</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Brand</th>
+      <th>Year</th>
+      <th>Package</th>
+      <th>Service Required</th>
+      <th>Status</th>
+      <th>Mechanic ID</th>
+      <th>CNIC</th>
+    </tr>
+  </table>
+
+  <script>
+    // Fetch data and handle errors
+    async function fetchData(url) {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+      } catch (error) {
+        console.error('Fetch error:', error);
+        return null;
+      }
+    }
+
+    // Populate table with data
+    function populateTable(tableId, data) {
+      const table = document.getElementById(tableId);
+      data.forEach(item => {
+        const row = table.insertRow();
+        Object.values(item).forEach(text => {
+          const cell = row.insertCell();
+          cell.textContent = text;
+        });
+      });
+    }
+
+    // Initialize dashboard
+    async function initializeDashboard() {
+      const data = await fetchData('fetch_data.php');
+      if (data) {
+        populateTable('mechanics', data.mechanics);
+        populateTable('owners', data.userregister);
+        populateTable('appointments', data.appointments);
+      }
+    }
+
+    // Run initialization
+    initializeDashboard();
+  </script>
+</body>
+</html>
